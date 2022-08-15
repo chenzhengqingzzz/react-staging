@@ -1,19 +1,27 @@
+<!-- public文件夹里面一般存静态资源文件 -->
+<!-- index.html为应用的主页面，以后react项目里面只能有一个html文件，此应用为SPA(单页面应用) -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- %PUBLIC_URL%代表public文件夹的路径 -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- 用于开启理想视口，用于做移动端网页的适配 -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 用于配置浏览器页签 + 地址栏的颜色(仅支持安卓手机浏览器) -->
     <meta name="theme-color" content="#000000" />
+    <!-- 用于描述网站信息 -->
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
+    <!-- 用于指定网页添加到手机主屏幕后的图标(只支持苹果手机) -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+    <!-- 应用加壳时的配置文件 -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
