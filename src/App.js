@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+// 用函数式定义了一个组件取名App
+// 唯一放入容器的组件，我们写的组件都是它的子组件
 function App() {
   return (
     <div className="App">
@@ -22,4 +24,5 @@ function App() {
   );
 }
 
+//ES6默认暴露
 export default App;
