@@ -1,6 +1,7 @@
 //创建“外壳组件”App
-import React from "react";
-const {Component} = React
+import React, {Component} from "react";
+// 从react身上获取Component
+// const {Component} = React
 
 class App extends Component{
     render(){
