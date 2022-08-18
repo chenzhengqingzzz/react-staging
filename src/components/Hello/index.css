@@ -1,0 +1,4 @@
+/* Hello.js的样式文件，需要在js文件里面指定key才能拿到并指定样式 */
+.title{
+    background-color: orange;
+}
