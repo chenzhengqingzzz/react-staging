@@ -37,33 +37,29 @@
 
 import React, {Component} from "react";
 import axios from "axios";
-import PubSub from "pubsub-js";
 
 export default class Search extends Component{
 
-	//pubsub组件订阅与发布消息
+	//放在App里传递数据
 	search = () => {
-
-		console.log('Search组件发布消息了');
-		
 		//获取用户键盘输入（连续解构赋值+重命名）
 		const {keyWordElement: {value: keyWord}} = this;
 		console.log('您搜索的是:', keyWord);
 
-		//发送请求前通知List更新状态
-		PubSub.publish('atguigu', {isFirst: false, isLoading: true})
+		//发送请求前通知App更新状态
+		this.props.updateAppState({isFirst: false, isLoading: true})
 
 		//发送网络请求
 		axios.get(`/api1/search/users?q=${keyWord}`).then(
 			response => {
-				//请求成功后通知List更新状态
-				PubSub.publish('atguigu', {isLoading: false, users: response.data.items})
+				//请求成功后通知App更新状态
+				this.props.updateAppState({isLoading: false, users: response.data.items})
 				console.log('成功了', response.data);	
 			},
 			error => {
-				//请求失败后通知List更新状态
+				//请求失败后通知App更新状态
 				//在这里最好不要存error这个错误对象，因为obj不能作为react的子类
-				PubSub.publish({isLoading: false, err: error.message})
+				this.props.updateAppState({isLoading: false, err: error.message})
 				// console.log('失败了', error);
 			}
 		)
