@@ -37,8 +37,8 @@ export default class App extends Component {
               {/* 注册路由 */}
               {/* 包裹Switch，选中则不会继续往下匹配路由，提高效率，节省资源 */}
               <Switch>
-                <Route path="/about" component={About}/>
-                <Route path="/home" component={Home}/>
+                <Route exact={true} path="/about" component={About}/>
+                <Route exact={true} path="/home" component={Home}/>
               </Switch>
             </div>
           </div>

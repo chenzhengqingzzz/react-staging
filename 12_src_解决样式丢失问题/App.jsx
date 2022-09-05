@@ -27,8 +27,8 @@ export default class App extends Component {
               {/* <NavLink activeClassName="atguigu" className="list-group-item" to="home">Home</NavLink> */}
               {/* <MyNavLink to="/about">About</MyNavLink> */}
               {/* <MyNavLink to="/home">Home</MyNavLink> */}
-              <MyNavLink to="/about" children="About"/>
-              <MyNavLink to="/home" children="Home"/>
+              <MyNavLink to="/atguigu/about" children="About"/>
+              <MyNavLink to="/atguigu/home" children="Home"/>
           </div>
         </div>
         <div className="col-xs-6">
@@ -37,8 +37,8 @@ export default class App extends Component {
               {/* 注册路由 */}
               {/* 包裹Switch，选中则不会继续往下匹配路由，提高效率，节省资源 */}
               <Switch>
-                <Route path="/about" component={About}/>
-                <Route path="/home" component={Home}/>
+                <Route path="/atguigu/about" component={About}/>
+                <Route path="/atguigu/home" component={Home}/>
               </Switch>
             </div>
           </div>
