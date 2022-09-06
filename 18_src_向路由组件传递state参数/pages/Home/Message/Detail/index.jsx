@@ -21,13 +21,18 @@ export default class Detail extends Component {
   //  const {id, title} = this.props.match.params
 
   // 接收search参数
-  const {search} = this.props.location
-  //因为截取出来的对象id前面多了一个问号，则使用slice方法忽略第一个字符
-  const {id, title}= qs.parse(search.slice(1))
+  // const {search} = this.props.location
+  //因为用parse方法解析出来的对象id前面多了一个问号，则使用slice方法忽略第一个字符
+  // const {id, title}= qs.parse(search.slice(1))
+
+  //接收state参数（此state非组件三大属性中的state）
+  //由于props里的属性是存在history里面的，清空浏览器缓存则会导致属性为undefined，所以后面写了个空对象来避免报错，下同
+  const {id, title} = this.props.location.state || {}
+
 
    const findResult = DetailData.find((detailObj) => {
     return detailObj.id === id
-   })
+   }) || {}
     return (
       <ul>
         <li>ID:{id}</li>
