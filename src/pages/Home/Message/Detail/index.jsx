@@ -18,7 +18,7 @@ export default class Detail extends Component {
   render() {
    console.log(this.props);
    //接收params参数
-  //  const {id, title} = this.props.match.params
+   const {id, title} = this.props.match.params
 
   // 接收search参数
   // const {search} = this.props.location
@@ -27,7 +27,7 @@ export default class Detail extends Component {
 
   //接收state参数（此state非组件三大属性中的state）
   //由于props里的属性是存在history里面的，清空浏览器缓存则会导致属性为undefined，所以后面写了个空对象来避免报错，下同
-  const {id, title} = this.props.location.state || {}
+  // const {id, title} = this.props.location.state || {}
 
 
    const findResult = DetailData.find((detailObj) => {

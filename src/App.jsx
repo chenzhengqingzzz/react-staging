@@ -27,8 +27,8 @@ export default class App extends Component {
               {/* <NavLink activeClassName="atguigu" className="list-group-item" to="home">Home</NavLink> */}
               {/* <MyNavLink to="/about">About</MyNavLink> */}
               {/* <MyNavLink to="/home">Home</MyNavLink> */}
-              <MyNavLink replace={true} to="/about" children="About"/>
-              <MyNavLink replace={true} to="/home" children="Home"/>
+              <MyNavLink to="/about" children="About"/>
+              <MyNavLink to="/home" children="Home"/>
           </div>
         </div>
         <div className="col-xs-6">
