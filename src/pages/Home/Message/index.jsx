@@ -13,12 +13,23 @@ export default class Message extends Component {
     }
 
     pushShow = (id, title) => {
-        this.props.history.push(`/home/message/detail/${id}/${title}`)
+        //push跳转，携带params参数
+        // this.props.history.push(`/home/message/detail/${id}/${title}`)
+
+        //push跳转，携带search参数
+        this.props.history.push(`/home/message/detail?id=${id}&title=${title}`)
     }
 
     replaceShow = (id, title) => {
+        //replace跳转，携带params参数
         //编写一段代码，让其实现跳转到Detail组件，且为replace跳转
-        this.props.history.replace(`/home/message/detail/${id}/${title}`)
+        // this.props.history.replace(`/home/message/detail/${id}/${title}`)
+
+        //replace跳转，携带search参数
+        this.props.history.replace(`/home/message/detail?id=${id}&title=${title}`)
+
+        //replace跳转，携带state参数
+        this.props.history.replace(`home/message/detail`)
     }
 
   render() {
@@ -31,12 +42,12 @@ export default class Message extends Component {
                         return (
                             <li key={msgObj.id}>
                                 {/* 向路由组件传递params参数 */}
-                                <Link to={`/home/message/detail/${msgObj.id}/${msgObj.title}`}>{msgObj.title}</Link>&nbsp;&nbsp;
+                                {/* <Link to={`/home/message/detail/${msgObj.id}/${msgObj.title}`}>{msgObj.title}</Link>&nbsp;&nbsp; */}
                                 &nbsp;<button onClick={() => this.pushShow(msgObj.id, msgObj.title)}>push查看</button>
                                 &nbsp;<button onClick={() => this.replaceShow(msgObj.id, msgObj.title)}>replace查看</button>
 
                                 {/* 向路由组件传递search参数 */}
-                                {/* <Link to={`/home/message/detail/?id=${msgObj.id}&title=${msgObj.title}`}>{msgObj.title}</Link> */}
+                                <Link to={`/home/message/detail/?id=${msgObj.id}&title=${msgObj.title}`}>{msgObj.title}</Link>
 
                                 {/* 向路由组件传递state参数 */}
                                 {/* <Link to={{pathname:'/home/message/detail', state:{id: msgObj.id, title: msgObj.title}}}>{msgObj.title}</Link> */}
@@ -48,10 +59,10 @@ export default class Message extends Component {
             <hr />
             <Switch>
                 {/* 声明接收params参数 */}
-                <Route path="/home/message/detail/:id/:title" component={Detail}/>
+                {/* <Route path="/home/message/detail/:id/:title" component={Detail}/> */}
 
                 {/* search参数无需声明接收，正常注册路由即可 */}
-                {/* <Route path="/home/message/detail" component={Detail}/> */}
+                <Route path="/home/message/detail" component={Detail}/>
 
                 {/* state参数无需声明接收，正常注册路由即可 */}
                 {/* <Route path="/home/message/detail" component={Detail}/> */}
