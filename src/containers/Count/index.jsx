@@ -1,3 +1,37 @@
+// import React, { Component } from 'react'
+// import { connect } from 'react-redux'
+// import { createIncrementAction } from '../../redux/count_action'
+
+// class Count extends Component {
+
+//     add = () => {
+//         //通知redux加一
+//         this.props.jiafa(1)
+//     }
+
+//   render() {
+//     return (
+//       <div>
+//         <h2>当前求和为:{this.props.he}</h2>
+//         <button onClick={this.add}>点我加1</button>
+//       </div>
+//     )
+//   }
+// }
+
+// export default connect(
+//     //映射state
+//     //默认返回对象
+//     state => ({he: state}),
+
+//     //映射操作state的方法
+//     {jiafa: createIncrementAction}
+// )(Count)
+
+
+//以上是一步到位写到优化后的代码demo，便于理解
+//----------------------------------------------------------
+
 import React, { Component } from 'react'
 //引入action
 import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from '../../redux/count_action'
@@ -92,3 +126,5 @@ const mapDispatchToProps = (dispatch) => {
 const CountContainer = connect(mapStateToProps, mapDispatchToProps)(Count)
 
 export default CountContainer
+
+
