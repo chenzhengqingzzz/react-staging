@@ -2,7 +2,7 @@
     1.该文件是由于创建一个味Count组件服务的reducer，reducer的本质是一个函数
     2.reducer函数会接到两个参数，分别为：(之前的状态),(动作对象)
 */
-import { INCREMENT, DECREMENT } from './constant'
+import { INCREMENT, DECREMENT } from '../constant'
 
 //初始化状态，如果不定义，则初始化的preState传入的是undefined
 const initState = 0
