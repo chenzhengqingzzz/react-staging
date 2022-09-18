@@ -15,6 +15,9 @@ export default class Parent extends Component {
 }
 
 class A extends Component {
+
+  state = {name: 'tom'}
+
     render() {
         console.log(this.props);
       return (
