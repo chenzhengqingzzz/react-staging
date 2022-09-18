@@ -22,6 +22,7 @@ class A extends Component {
       return (
         <div className='a'>
           <h3>我是A组件</h3>
+          {/* 一般用于不确定AB组件的父子关系，类似于Vue的插槽 */}
             {this.props.render(name)}
         </div>
       )
