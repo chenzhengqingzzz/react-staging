@@ -1,5 +1,3 @@
-# <img src="https://ftp.bmp.ovh/imgs/2022/02/f86f98dd6ff7d01b.png" style="width:50%;margin-left:50%;transform:translateX(-50%)" />
-
 # React Router 6 快速上手
 
 ## 1.概述
@@ -16,9 +14,9 @@
 
    2. 语法的变化：`component={About}` 变为 `element={<About/>}`等。
 
-   5. 新增多个hook：`useParams`、`useNavigate`、`useMatch`等。
+   3. 新增多个hook：`useParams`、`useNavigate`、`useMatch`等。
 
-   7. <strong style="color:#dd4d40">官方明确推荐函数式组件了！！！</strong>
+   4. <strong style="color:#dd4d40">官方明确推荐函数式组件了！！！</strong>
 
       ......
 
@@ -55,11 +53,11 @@
 
 3. `<Route>` 相当于一个 if 语句，如果其路径与当前 URL 匹配，则呈现其对应的组件。
 
-4.  `<Route caseSensitive>` 属性用于指定：匹配时是否区分大小写（默认为 false）。
+4. `<Route caseSensitive>` 属性用于指定：匹配时是否区分大小写（默认为 false）。
 
 5. 当URL发生变化时，`<Routes> `都会查看其所有子` <Route>` 元素以找到最佳匹配并呈现组件 。
 
-6.  `<Route>` 也可以嵌套使用，且可配合`useRoutes()`配置 “路由表” ，但需要通过 `<Outlet>` 组件来渲染其子路由。
+6. `<Route>` 也可以嵌套使用，且可配合`useRoutes()`配置 “路由表” ，但需要通过 `<Outlet>` 组件来渲染其子路由。
 
 7. 示例代码：
 
