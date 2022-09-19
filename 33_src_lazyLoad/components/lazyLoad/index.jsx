@@ -1,13 +1,13 @@
 import React, { Component, lazy, Suspense } from 'react'
 import {NavLink, Route} from 'react-router-dom'
-import Loading from './Loading'
+import Loading from '../../../src/components/2_lazyLoad/Loading'
 
 // import Home from './Home'
 // import About from './About'
 
 //引入需要懒加载的组件
-const Home = lazy(() => import('./Home'))
-const About = lazy(() => import('./About'))
+const Home = lazy(() => import('../../../src/components/2_lazyLoad/Home'))
+const About = lazy(() => import('../../../src/components/2_lazyLoad/About'))
 
 
 export default class Demo extends Component {
