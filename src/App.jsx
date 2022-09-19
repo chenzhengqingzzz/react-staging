@@ -1,9 +1,27 @@
+import { element } from "prop-types";
 import React from "react";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route, Navigate, useRoutes } from "react-router-dom";
 import About from './pages/About'
 import Home from './pages/Home'
 
 export default function App() {
+
+  //要求写数组，因为Routes里面可能有多个Route
+  const a = useRoutes([
+    {
+      path: '/',
+      element:<Navigate to="about"/>
+    },
+    {
+      path: '/about',
+      element: <About/>
+    },
+    {
+      path: '/home',
+      element: <Home/>
+    }
+  ])
+
   return (
     <div>
       <div className="row">
@@ -16,7 +34,7 @@ export default function App() {
       <div className="row">
         <div className="col-xs-2 col-xs-offset-2">
           <div className="list-group">
-            {/* 路由链接 */}
+            {/* 路由链接,管理跳转 */}
             <NavLink className="list-group-item" to='/about'>About</NavLink>
             <NavLink className="list-group-item" to='home'>Home</NavLink>
           </div>
@@ -26,8 +44,9 @@ export default function App() {
             <div className="panel-body">
               {/* 注册路由 */}
               <Routes>
-                <Route path='about' element={<About/>}/>
-                <Route path='home' element={<Home/>}/>
+                <Route path='/' element={<Navigate to="about"/>}/>
+                <Route path='/about' element={<About/>}/>
+                <Route path='/home' element={<Home/>}/>
               </Routes>
             </div>
           </div>
