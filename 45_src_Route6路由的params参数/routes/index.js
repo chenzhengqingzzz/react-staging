@@ -29,6 +29,7 @@ export default[
             element: <Message/>,
             children: [
               {
+                // params参数中Route6中需要占位
                 path: 'detail/:id/:title/:content',
                 element: <Detail/>
               },

@@ -29,6 +29,7 @@ export default[
             element: <Message/>,
             children: [
               {
+                // search参数在Route6中不需要占位
                 path: 'detail',
                 element: <Detail/>
               },
