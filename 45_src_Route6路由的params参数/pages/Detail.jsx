@@ -3,7 +3,7 @@ import { useMatch, useParams } from 'react-router-dom'
 
 export default function Detail() {
     const {id, title, content} = useParams()
-    //useMatch：
+    //另一种拿到数据的方式useMatch：
     //const x = useMatch('/home/message/detail/:id/:title/:content')
     //console.log(x);
   return (

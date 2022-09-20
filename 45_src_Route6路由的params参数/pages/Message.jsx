@@ -19,6 +19,7 @@ export default function Message() {
               return (
                 //路由链接
                 <li key={messagesObj.id}>
+                  {/* 携带Params参数 */}
                   <Link to={`detail/${messagesObj.id}/${messagesObj.title}/${messagesObj.content}`}>{messagesObj.title}</Link>
                 </li>
               )
