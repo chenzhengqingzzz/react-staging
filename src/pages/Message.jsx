@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 export default function Message() {
 
@@ -9,6 +9,11 @@ export default function Message() {
     {id: '003', title: '消息3', content: '谁知盘中餐'},
     {id: '004', title: '消息4', content: '粒粒皆辛苦'},
   ])
+
+  const a = useNavigate()
+  function showDetail(){
+
+  }
 
   return (
     <div>
@@ -27,6 +32,7 @@ export default function Message() {
                     title: messagesObj.title,
                     content: messagesObj.content
                   }}>{messagesObj.title}</Link>
+                  <button onClick={showDetail}>查看详情</button>
                 </li>
               )
             })
